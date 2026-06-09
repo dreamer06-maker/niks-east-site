@@ -11,7 +11,7 @@
     <link rel="preload" href="assets/niks-maple-hero.jpg" as="image" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body data-theme="maple">
     <div class="scroll-progress" aria-hidden="true"></div>
     <div class="cursor-light" aria-hidden="true"></div>
 
@@ -22,6 +22,7 @@
       </a>
       <nav class="nav-links" aria-label="Page sections">
         <a href="#works">Works</a>
+        <a href="#cosmos">Cosmos</a>
         <a href="#rebirth">Rebirth</a>
         <a href="#flow">Flow</a>
         <a href="#about">About</a>
@@ -50,6 +51,11 @@
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button primary" href="#works">进入作品</a>
             <a class="button secondary" href="http://xhslink.com/o/55iMdQvDjoN" target="_blank" rel="noreferrer">最新发布</a>
+          </div>
+          <div class="theme-switcher" aria-label="Choose site mood">
+            <button class="theme-button active" type="button" data-theme-choice="maple">Maple</button>
+            <button class="theme-button" type="button" data-theme-choice="cosmos">Saturn</button>
+            <button class="theme-button" type="button" data-theme-choice="rebirth">Rebirth</button>
           </div>
         </div>
         <div class="hero-panel reveal" aria-label="Portfolio summary">
@@ -127,6 +133,28 @@
         </div>
       </section>
 
+      <section id="cosmos" class="section cosmos-section reveal" aria-label="Saturn and universe theme">
+        <div class="cosmos-copy">
+          <p class="section-label">Cosmos Mode</p>
+          <h2>我也喜欢宇宙的神秘和无限。</h2>
+          <p>
+            如果枫叶树林是我脚下的地方，那土星就是我望向远处时最喜欢的星球。它冷、远、安静，又像一枚悬在黑暗里的戒指。
+          </p>
+        </div>
+        <div class="cosmos-orbit">
+          <div class="saturn" aria-hidden="true">
+            <span class="saturn-core"></span>
+            <span class="saturn-ring"></span>
+            <span class="saturn-ring ring-two"></span>
+          </div>
+          <video class="cosmos-video" src="assets/to-be-free-preview.mp4" poster="assets/to-be-free-poster.jpg" autoplay muted loop playsinline></video>
+          <div class="cosmos-caption">
+            <span>TO BE FREE</span>
+            <strong>自由不是逃离地球，是把自己重新放回无限里。</strong>
+          </div>
+        </div>
+      </section>
+
       <section id="works" class="section works-section">
         <div class="section-heading reveal">
           <div>
@@ -169,11 +197,14 @@
 
         <div class="work-grid" aria-live="polite">
           <article class="work-card reveal" data-kind="film">
-            <div class="thumb thumb-free"><span>TO BE FREE</span></div>
+            <div class="thumb video-thumb">
+              <video src="assets/to-be-free-preview.mp4" poster="assets/to-be-free-poster.jpg" autoplay muted loop playsinline></video>
+              <span>TO BE FREE</span>
+            </div>
             <div class="work-body">
               <p class="work-type">Film</p>
               <h3>TO BE FREE</h3>
-              <p>自由不是一句话，是风、路、镜头和继续往前走。</p>
+              <p>自由不是一句话，是风、路、镜头，也是一点宇宙的无限感。</p>
               <div class="work-links">
                 <a href="https://www.douyin.com/search/Dreamerzhang%20TO%20BE%20FREE" target="_blank" rel="noreferrer">Douyin</a>
                 <a href="https://www.xiaohongshu.com/search_result?keyword=1874566400%20TO%20BE%20FREE" target="_blank" rel="noreferrer">Find</a>
@@ -271,6 +302,22 @@
             <h3>发布</h3>
             <p>先放出能看的，再把每个作品做成更完整的页面。</p>
           </article>
+        </div>
+      </section>
+
+      <section id="resume" class="section resume-section reveal" aria-label="Resume and introduction video">
+        <div class="resume-copy">
+          <p class="section-label">Resume</p>
+          <h2>简历和视频简介。</h2>
+          <p>
+            这里会放更正式的一面：简历、介绍视频，以及以后可以继续补充的经历、技能和合作信息。
+          </p>
+        </div>
+        <div class="resume-media">
+          <a class="resume-image" href="assets/resume-zhangziqiong.jpg" target="_blank" rel="noreferrer" aria-label="Open resume image">
+            <img src="assets/resume-zhangziqiong.jpg" alt="章紫琼的个人简历图片" />
+          </a>
+          <video class="resume-video" src="assets/intro-video.mp4" poster="assets/intro-video-poster.jpg" controls preload="metadata"></video>
         </div>
       </section>
 

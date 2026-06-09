@@ -7,9 +7,33 @@ const year = document.querySelector("#year");
 const revealItems = document.querySelectorAll(".reveal");
 const rebirth = document.querySelector(".rebirth-section");
 const rebirthStage = document.querySelector(".rebirth-stage");
+const themeButtons = document.querySelectorAll("[data-theme-choice]");
+
+const setTheme = (theme) => {
+  document.body.dataset.theme = theme;
+
+  themeButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.themeChoice === theme);
+  });
+
+  try {
+    localStorage.setItem("niks-theme", theme);
+  } catch {
+    // Local storage can be unavailable in some private browsing contexts.
+  }
+};
 
 if (year) {
   year.textContent = new Date().getFullYear();
+}
+
+try {
+  const savedTheme = localStorage.getItem("niks-theme");
+  if (savedTheme) {
+    setTheme(savedTheme);
+  }
+} catch {
+  setTheme("maple");
 }
 
 const updateScroll = () => {
@@ -63,6 +87,21 @@ tabs.forEach((tab) => {
       const shouldShow = filter === "all" || item.dataset.kind === filter;
       item.classList.toggle("hidden", !shouldShow);
     });
+  });
+});
+
+themeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const theme = button.dataset.themeChoice;
+    setTheme(theme);
+
+    if (theme === "cosmos") {
+      document.querySelector("#cosmos")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    if (theme === "rebirth") {
+      document.querySelector("#rebirth")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   });
 });
 
