@@ -42,3 +42,4 @@ This folder can also be connected to Cloudflare Workers Builds.
 5. Select the `niks-east-site` repository and the `main` branch.
 6. Keep the build command empty.
 7. Use the included `wrangler.toml`; it tells Cloudflare to serve this folder as static assets.
+Cloudflare Git deployment enabled.
