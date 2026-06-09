@@ -11,9 +11,13 @@
   --sky: #86c8d4;
   --sun: #f0b45e;
   --clay: #d9835f;
+  --maple: #c96f35;
+  --bark: #5a4330;
   --shadow: rgba(32, 48, 36, 0.16);
   --mouse-x: 50vw;
   --mouse-y: 50vh;
+  --stage-x: 50%;
+  --stage-y: 50%;
   --scroll: 0%;
 }
 
@@ -30,9 +34,9 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background:
-    linear-gradient(180deg, rgba(255, 253, 247, 0.72), rgba(232, 242, 239, 0.92)),
-    radial-gradient(circle at 12% 18%, rgba(134, 200, 212, 0.34), transparent 27rem),
-    radial-gradient(circle at 86% 10%, rgba(240, 180, 94, 0.28), transparent 25rem),
+    linear-gradient(180deg, rgba(255, 253, 247, 0.76), rgba(246, 241, 232, 0.98)),
+    radial-gradient(circle at 12% 18%, rgba(240, 180, 94, 0.32), transparent 27rem),
+    radial-gradient(circle at 88% 14%, rgba(132, 169, 93, 0.24), transparent 25rem),
     var(--paper);
   color: var(--ink);
   font-family:
@@ -173,7 +177,8 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(1.05) contrast(0.98);
+  object-position: center center;
+  filter: saturate(1.08) contrast(1.02) brightness(0.98);
   transform: scale(1.03);
   animation: imageDrift 22s ease-in-out infinite alternate;
 }
@@ -181,9 +186,9 @@ img {
 .hero-shade {
   z-index: -2;
   background:
-    linear-gradient(90deg, rgba(255, 253, 247, 0.95), rgba(255, 253, 247, 0.64) 45%, rgba(255, 253, 247, 0.18)),
-    linear-gradient(0deg, rgba(255, 253, 247, 0.98), rgba(255, 253, 247, 0.04) 44%),
-    radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.44), transparent 34rem);
+    linear-gradient(90deg, rgba(255, 253, 247, 0.82), rgba(255, 253, 247, 0.5) 38%, rgba(255, 253, 247, 0.08) 68%),
+    linear-gradient(0deg, rgba(255, 253, 247, 0.9), rgba(255, 253, 247, 0.02) 48%),
+    radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 232, 175, 0.32), transparent 32rem);
 }
 
 .forest-lines {
@@ -268,7 +273,7 @@ strong {
 h1 {
   max-width: 980px;
   margin: 12px 0 0;
-  color: #102016;
+  color: #07180f;
   font-size: clamp(70px, 15vw, 190px);
   font-weight: 950;
   letter-spacing: 0;
@@ -279,7 +284,7 @@ h1 {
 .slogan {
   max-width: 920px;
   margin: 24px 0 0;
-  color: #14241b;
+  color: #081b10;
   font-size: clamp(34px, 6.2vw, 88px);
   font-weight: 850;
   letter-spacing: 0;
@@ -340,7 +345,7 @@ h1 {
   padding: 18px;
   border: 1px solid rgba(255, 253, 247, 0.62);
   border-radius: 8px;
-  background: rgba(255, 253, 247, 0.72);
+  background: rgba(255, 253, 247, 0.88);
   box-shadow: 0 22px 70px rgba(31, 56, 41, 0.12);
   backdrop-filter: blur(18px);
 }
@@ -394,7 +399,9 @@ h1 {
 
 .intro-band,
 .about-section,
-.contact-section {
+.contact-section,
+.identity-section,
+.rebirth-section {
   display: grid;
   grid-template-columns: minmax(260px, 0.92fr) minmax(300px, 1.08fr);
   gap: 60px;
@@ -402,10 +409,17 @@ h1 {
 }
 
 .intro-band p:last-child,
-.about-section p {
+.about-section p,
+.identity-copy p,
+.rebirth-copy p {
   margin: 0;
   color: var(--muted);
   font-size: clamp(19px, 2.2vw, 28px);
+}
+
+.identity-copy p + p,
+.rebirth-copy p + p {
+  margin-top: 18px;
 }
 
 h2 {
@@ -429,6 +443,258 @@ h3 {
   justify-content: space-between;
   gap: 28px;
   margin-bottom: 34px;
+}
+
+.identity-section {
+  align-items: center;
+}
+
+.identity-photos {
+  position: relative;
+  min-height: 640px;
+}
+
+.identity-photos img {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 253, 247, 0.72);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(46, 58, 40, 0.16);
+  object-fit: cover;
+}
+
+.photo-main {
+  right: 0;
+  top: 0;
+  z-index: 2;
+  max-width: 72%;
+  aspect-ratio: 4 / 3;
+}
+
+.photo-side {
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  max-width: 44%;
+  aspect-ratio: 3 / 4;
+}
+
+.photo-small {
+  right: 8%;
+  bottom: 8%;
+  z-index: 1;
+  max-width: 42%;
+  aspect-ratio: 5 / 6;
+  filter: saturate(0.96);
+}
+
+.rebirth-section {
+  align-items: center;
+  padding-top: 82px;
+  padding-bottom: 82px;
+}
+
+.rebirth-stage {
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+  border: 1px solid rgba(88, 66, 45, 0.14);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at var(--stage-x) var(--stage-y), rgba(255, 236, 178, 0.52), transparent 13rem),
+    linear-gradient(180deg, rgba(255, 253, 247, 0.92), rgba(238, 231, 214, 0.86)),
+    url("assets/maple-tree.jpg") center / cover;
+  box-shadow: inset 0 0 0 1px rgba(255, 253, 247, 0.55), 0 24px 70px rgba(46, 58, 40, 0.13);
+  isolation: isolate;
+  cursor: crosshair;
+}
+
+.rebirth-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(255, 253, 247, 0.84), rgba(255, 253, 247, 0.46)),
+    linear-gradient(0deg, rgba(56, 43, 32, 0.28), transparent 52%);
+}
+
+.spring-sun {
+  position: absolute;
+  left: var(--stage-x);
+  top: var(--stage-y);
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.88), rgba(255, 207, 102, 0.42) 34%, transparent 68%);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.72);
+  transition: opacity 500ms ease, transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.deadwood {
+  position: absolute;
+  left: 50%;
+  bottom: -24px;
+  width: min(78%, 520px);
+  transform: translateX(-50%);
+  filter: drop-shadow(0 22px 22px rgba(66, 45, 29, 0.18));
+}
+
+.deadwood path {
+  fill: none;
+  stroke: var(--bark);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 700ms ease, stroke-width 700ms ease;
+}
+
+.trunk {
+  stroke-width: 28;
+}
+
+.branch {
+  stroke-width: 16;
+}
+
+.branch-c,
+.branch-d {
+  stroke-width: 13;
+}
+
+.leaf {
+  position: absolute;
+  width: 34px;
+  height: 42px;
+  border-radius: 70% 22% 70% 22%;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.38), transparent 36%),
+    linear-gradient(135deg, #a8c86b, #3d8b57 62%, #f0b45e);
+  box-shadow: 0 12px 28px rgba(43, 76, 45, 0.14);
+  opacity: 0;
+  transform: scale(0.1) rotate(-24deg);
+  transition: opacity 520ms ease, transform 760ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.leaf::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 253, 247, 0.52);
+  transform: rotate(-26deg);
+}
+
+.leaf-1 {
+  left: 24%;
+  top: 28%;
+}
+
+.leaf-2 {
+  left: 34%;
+  top: 41%;
+}
+
+.leaf-3 {
+  left: 49%;
+  top: 20%;
+}
+
+.leaf-4 {
+  left: 59%;
+  top: 38%;
+}
+
+.leaf-5 {
+  left: 70%;
+  top: 31%;
+}
+
+.leaf-6 {
+  left: 41%;
+  top: 58%;
+}
+
+.leaf-7 {
+  left: 64%;
+  top: 59%;
+}
+
+.growth-ring {
+  position: absolute;
+  left: 50%;
+  bottom: 42px;
+  width: 280px;
+  height: 80px;
+  border: 1px solid rgba(31, 91, 66, 0.24);
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateX(-50%) scale(0.72);
+  transition: opacity 600ms ease, transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.rebirth-section.is-awake .spring-sun,
+.rebirth-section:hover .spring-sun {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.rebirth-section.is-awake .deadwood path,
+.rebirth-section:hover .deadwood path {
+  stroke: #4b6b38;
+}
+
+.rebirth-section.is-awake .leaf,
+.rebirth-section:hover .leaf {
+  opacity: 1;
+  transform: scale(1) rotate(18deg);
+}
+
+.rebirth-section.is-awake .leaf-2,
+.rebirth-section:hover .leaf-2 {
+  transition-delay: 80ms;
+  transform: scale(1) rotate(-34deg);
+}
+
+.rebirth-section.is-awake .leaf-3,
+.rebirth-section:hover .leaf-3 {
+  transition-delay: 130ms;
+  transform: scale(1) rotate(28deg);
+}
+
+.rebirth-section.is-awake .leaf-4,
+.rebirth-section:hover .leaf-4 {
+  transition-delay: 190ms;
+  transform: scale(1) rotate(-18deg);
+}
+
+.rebirth-section.is-awake .leaf-5,
+.rebirth-section:hover .leaf-5 {
+  transition-delay: 240ms;
+  transform: scale(1) rotate(32deg);
+}
+
+.rebirth-section.is-awake .leaf-6,
+.rebirth-section:hover .leaf-6 {
+  transition-delay: 300ms;
+  transform: scale(1) rotate(-10deg);
+}
+
+.rebirth-section.is-awake .leaf-7,
+.rebirth-section:hover .leaf-7 {
+  transition-delay: 360ms;
+  transform: scale(1) rotate(24deg);
+}
+
+.rebirth-section.is-awake .growth-ring,
+.rebirth-section:hover .growth-ring {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 
 .tabs {
@@ -484,8 +750,8 @@ h3 {
   overflow: hidden;
   padding: 22px;
   background:
-    linear-gradient(135deg, rgba(31, 91, 66, 0.18), transparent 44%),
-    url("assets/hero-clouds.png") center / cover;
+    linear-gradient(135deg, rgba(31, 91, 66, 0.2), transparent 44%),
+    url("assets/maple-orb.jpg") center / cover;
   isolation: isolate;
 }
 
@@ -739,12 +1005,17 @@ h3 {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(22px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 700ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.reveal.visible {
+.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.js-enabled .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -815,8 +1086,12 @@ h3 {
 
   .hero-shade {
     background:
-      linear-gradient(90deg, rgba(255, 253, 247, 0.96), rgba(255, 253, 247, 0.64)),
+      linear-gradient(90deg, rgba(255, 253, 247, 0.95), rgba(255, 253, 247, 0.68)),
       linear-gradient(0deg, rgba(255, 253, 247, 0.98), rgba(255, 253, 247, 0.08) 48%);
+  }
+
+  .hero-image {
+    object-position: 58% center;
   }
 
   .hero-panel {
@@ -833,6 +1108,8 @@ h3 {
   .intro-band,
   .about-section,
   .contact-section,
+  .identity-section,
+  .rebirth-section,
   .section-heading,
   .spotlight,
   .spotlight-grid {
@@ -853,6 +1130,14 @@ h3 {
   .work-grid,
   .flow-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .identity-photos {
+    min-height: 560px;
+  }
+
+  .rebirth-stage {
+    min-height: 520px;
   }
 }
 
@@ -882,6 +1167,10 @@ h3 {
     font-size: 18px;
   }
 
+  .hero-image {
+    object-position: 66% center;
+  }
+
   .button {
     width: 100%;
   }
@@ -899,6 +1188,36 @@ h3 {
   .work-grid,
   .flow-grid {
     grid-template-columns: 1fr;
+  }
+
+  .identity-photos {
+    min-height: 470px;
+  }
+
+  .photo-main {
+    max-width: 88%;
+  }
+
+  .photo-side {
+    max-width: 52%;
+  }
+
+  .photo-small {
+    right: 0;
+    max-width: 48%;
+  }
+
+  .rebirth-stage {
+    min-height: 440px;
+  }
+
+  .deadwood {
+    width: 96%;
+  }
+
+  .leaf {
+    width: 26px;
+    height: 33px;
   }
 
   .work-card {

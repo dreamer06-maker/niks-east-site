@@ -1,8 +1,12 @@
 const root = document.documentElement;
+root.classList.add("js-enabled");
+
 const tabs = document.querySelectorAll(".tab");
 const filterItems = document.querySelectorAll("[data-kind]");
 const year = document.querySelector("#year");
 const revealItems = document.querySelectorAll(".reveal");
+const rebirth = document.querySelector(".rebirth-section");
+const rebirthStage = document.querySelector(".rebirth-stage");
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -26,6 +30,26 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+if (rebirth && rebirthStage) {
+  rebirthStage.addEventListener(
+    "pointermove",
+    (event) => {
+      const rect = rebirthStage.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 100;
+      const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+      rebirth.classList.add("is-awake");
+      rebirthStage.style.setProperty("--stage-x", `${x}%`);
+      rebirthStage.style.setProperty("--stage-y", `${y}%`);
+    },
+    { passive: true }
+  );
+
+  rebirthStage.addEventListener("pointerleave", () => {
+    rebirth.classList.remove("is-awake");
+  });
+}
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -56,5 +80,10 @@ const observer = new IntersectionObserver(
 
 revealItems.forEach((item, index) => {
   item.style.transitionDelay = `${Math.min(index * 45, 260)}ms`;
+
+  if (window.location.hash) {
+    item.classList.add("visible");
+  }
+
   observer.observe(item);
 });
