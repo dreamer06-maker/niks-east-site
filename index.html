@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Niks East 是 Niks Zhang / 乌云向东的个人影像作品集。"
+      content="Niks East 是 Niks Zhang / 乌云向东的个人影像作品集。让生命流动起来。"
     />
-    <title>Niks East | 乌云向东</title>
+    <title>Niks East | 让生命流动起来</title>
     <link rel="preload" href="assets/hero-clouds.png" as="image" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="cursor-light" aria-hidden="true"></div>
+
     <header class="site-header" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Niks East home">
         <span>Niks East</span>
@@ -19,7 +22,7 @@
       </a>
       <nav class="nav-links" aria-label="Page sections">
         <a href="#works">Works</a>
-        <a href="#notes">Notes</a>
+        <a href="#flow">Flow</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -28,38 +31,57 @@
     <main id="top">
       <section class="hero" aria-label="Niks East introduction">
         <img class="hero-image" src="assets/hero-clouds.png" alt="" />
+        <div class="forest-lines" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div class="hero-shade"></div>
-        <div class="hero-content">
+        <div class="hero-inner reveal">
           <p class="eyebrow">Niks Zhang / 乌云向东</p>
           <h1>Niks East</h1>
+          <p class="slogan">让生命流动起来。</p>
           <p class="hero-copy">
-            我把拍过的路、学校、海边、树林和还没成形的梦，先放在这里。
+            一个继续生长的影像入口。<br />
+            树林、风、学校、海边和还没成形的梦，<br />
+            都先从这里往东走。
           </p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#works">View Works</a>
-            <a class="button secondary" href="http://xhslink.com/o/55iMdQvDjoN" target="_blank" rel="noreferrer">Latest Post</a>
+            <a class="button primary" href="#works">进入作品</a>
+            <a class="button secondary" href="http://xhslink.com/o/55iMdQvDjoN" target="_blank" rel="noreferrer">最新发布</a>
           </div>
         </div>
-        <div class="hero-meta" aria-label="Portfolio summary">
-          <span>Video</span>
-          <span>Campus</span>
-          <span>Travel</span>
-          <span>Still Becoming</span>
+        <div class="hero-panel reveal" aria-label="Portfolio summary">
+          <span>Personal Portfolio</span>
+          <strong>Forest / Campus / Road</strong>
+          <p>正在整理的作品、已经发布的链接，<br />和下一次出发前的片段。</p>
         </div>
       </section>
 
-      <section class="section intro-band" aria-label="Current focus">
+      <section class="marquee-band" aria-label="Moving slogan">
+        <div class="marquee-track">
+          <span>让生命流动起来</span>
+          <span>Stay Free</span>
+          <span>Keep Moving East</span>
+          <span>让生命流动起来</span>
+          <span>Stay Free</span>
+          <span>Keep Moving East</span>
+        </div>
+      </section>
+
+      <section class="section intro-band reveal" aria-label="Current focus">
         <div>
           <p class="section-label">Current Focus</p>
-          <h2>自由一点，往东一点。</h2>
+          <h2>像穿过一片树林一样，慢慢走进我的影像。</h2>
         </div>
         <p>
-          Niks East 是我的个人影像档案。它不只放“完成品”，也放练习、切片、预告、想法和以后会继续长出来的东西。
+          Niks East 不只是一个作品列表。它更像一个正在长大的影像房间：有完成品，也有练习、预告、切片和之后会被重新整理的梦。
         </p>
       </section>
 
       <section id="works" class="section works-section">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <div>
             <p class="section-label">Selected Works</p>
             <h2>最近能看到的作品。</h2>
@@ -72,16 +94,16 @@
           </div>
         </div>
 
-        <div class="featured-work">
-          <article class="feature-card" data-kind="published">
-            <a class="feature-media" href="http://xhslink.com/o/55iMdQvDjoN" target="_blank" rel="noreferrer" aria-label="Watch 福大宿舍，居然有电梯">
+        <div class="spotlight-grid">
+          <article class="spotlight reveal" data-kind="published">
+            <a class="spotlight-media" href="http://xhslink.com/o/55iMdQvDjoN" target="_blank" rel="noreferrer" aria-label="Watch 福大宿舍，居然有电梯">
               <span>01</span>
             </a>
-            <div class="feature-copy">
+            <div class="spotlight-copy">
               <p class="work-type">Published / Xiaohongshu</p>
               <h3>福大宿舍，居然有电梯</h3>
               <p>
-                从学校生活里抓出一点新鲜感。它不是宏大的作品，但很像我想保存的那种日常：真实、有点好奇、带一点突然发现的快乐。
+                从学校生活里抓出一点新鲜感。它不是宏大的作品，但很像我想保存的那种日常：真实、好奇、突然开心。
               </p>
               <div class="work-links">
                 <a href="http://xhslink.com/o/55iMdQvDjoN" target="_blank" rel="noreferrer">Watch</a>
@@ -89,28 +111,22 @@
               </div>
             </div>
           </article>
+
+          <article class="side-feature reveal" data-kind="published">
+            <p class="work-type">Published / Campus</p>
+            <h3>一个人在学校可以玩什么？</h3>
+            <p>社团体验系列的第一条。一个人也可以把校园走成地图，把无聊剪成入口。</p>
+            <a href="http://xhslink.com/o/2l6mpnZ2SIx" target="_blank" rel="noreferrer">Open Link</a>
+          </article>
         </div>
 
         <div class="work-grid" aria-live="polite">
-          <article class="work-card" data-kind="published">
-            <div class="thumb thumb-b"></div>
-            <div class="work-body">
-              <p class="work-type">Published</p>
-              <h3>一个人在学校可以玩什么</h3>
-              <p>社团体验系列的第一条。一个人也可以把校园走成地图，把无聊剪成入口。</p>
-              <div class="work-links">
-                <a href="http://xhslink.com/o/2l6mpnZ2SIx" target="_blank" rel="noreferrer">Watch</a>
-                <a href="https://www.xiaohongshu.com/search_result?keyword=1874566400" target="_blank" rel="noreferrer">Xiaohongshu</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="work-card" data-kind="film">
-            <div class="thumb thumb-c"></div>
+          <article class="work-card reveal" data-kind="film">
+            <div class="thumb thumb-free"><span>TO BE FREE</span></div>
             <div class="work-body">
               <p class="work-type">Film</p>
               <h3>TO BE FREE</h3>
-              <p>一个最适合放在首页的标题。自由不是一句话，是风、路、镜头和继续往前走。</p>
+              <p>自由不是一句话，是风、路、镜头和继续往前走。</p>
               <div class="work-links">
                 <a href="https://www.douyin.com/search/Dreamerzhang%20TO%20BE%20FREE" target="_blank" rel="noreferrer">Douyin</a>
                 <a href="https://www.xiaohongshu.com/search_result?keyword=1874566400%20TO%20BE%20FREE" target="_blank" rel="noreferrer">Find</a>
@@ -118,12 +134,12 @@
             </div>
           </article>
 
-          <article class="work-card" data-kind="film">
-            <div class="thumb thumb-d"></div>
+          <article class="work-card reveal" data-kind="film">
+            <div class="thumb thumb-ocean"><span>WANNING</span></div>
             <div class="work-body">
-              <p class="work-type">Film</p>
+              <p class="work-type">Travel</p>
               <h3>冲浪 万宁</h3>
-              <p>海边、速度、阳光和身体在画面里的松弛感。适合以后做成更完整的旅行页。</p>
+              <p>海边、速度、阳光和身体在画面里的松弛感。</p>
               <div class="work-links">
                 <a href="https://www.douyin.com/search/Dreamerzhang%20%E5%86%B2%E6%B5%AA%20%E4%B8%87%E5%AE%81" target="_blank" rel="noreferrer">Douyin</a>
                 <a href="https://www.xiaohongshu.com/search_result?keyword=1874566400%20%E5%86%B2%E6%B5%AA%20%E4%B8%87%E5%AE%81" target="_blank" rel="noreferrer">Find</a>
@@ -131,84 +147,97 @@
             </div>
           </article>
 
-          <article class="work-card" data-kind="archive">
-            <div class="thumb thumb-e"></div>
+          <article class="work-card reveal" data-kind="archive">
+            <div class="thumb thumb-mountain"><span>ARCHIVE</span></div>
             <div class="work-body">
               <p class="work-type">Archive</p>
               <h3>关山难越</h3>
-              <p>早一点的完成品。它应该被重新整理、配封面、写清楚拍摄时间，然后认真放出来。</p>
+              <p>早一点的完成品。等重新整理封面、时间和说明后，会认真放出来。</p>
               <div class="work-links">
                 <a href="https://www.douyin.com/search/Dreamerzhang%20%E5%85%B3%E5%B1%B1%E9%9A%BE%E8%B6%8A" target="_blank" rel="noreferrer">Douyin</a>
-                <a href="#notes">To Sort</a>
+                <a href="#flow">To Sort</a>
               </div>
             </div>
           </article>
 
-          <article class="work-card" data-kind="archive">
-            <div class="thumb thumb-f"></div>
+          <article class="work-card reveal" data-kind="archive">
+            <div class="thumb thumb-echo"><span>ECHO</span></div>
             <div class="work-body">
               <p class="work-type">Archive</p>
               <h3>回声</h3>
               <p>一个安静的名字。适合放在更私人的部分，不急着解释，但值得留下。</p>
               <div class="work-links">
                 <a href="https://www.xiaohongshu.com/search_result?keyword=1874566400%20%E5%9B%9E%E5%A3%B0" target="_blank" rel="noreferrer">Find</a>
-                <a href="#notes">To Sort</a>
+                <a href="#flow">To Sort</a>
               </div>
             </div>
           </article>
 
-          <article class="work-card" data-kind="film">
-            <div class="thumb thumb-g"></div>
+          <article class="work-card reveal" data-kind="film">
+            <div class="thumb thumb-campus"><span>CAMPUS</span></div>
             <div class="work-body">
               <p class="work-type">Campus</p>
               <h3>射艺协会体验</h3>
-              <p>校园活动、社团体验和观察现场。可以继续扩展成一个“学校可以怎么玩”的系列。</p>
+              <p>校园活动、社团体验和观察现场，可以继续扩展成一个系列。</p>
               <div class="work-links">
                 <a href="https://www.douyin.com/search/Dreamerzhang%20%E5%B0%84%E8%89%BA%E5%8D%8F%E4%BC%9A%E4%BD%93%E9%AA%8C" target="_blank" rel="noreferrer">Douyin</a>
                 <a href="http://xhslink.com/o/2l6mpnZ2SIx" target="_blank" rel="noreferrer">Series</a>
               </div>
             </div>
           </article>
+
+          <article class="work-card reveal" data-kind="archive">
+            <div class="thumb thumb-bird"><span>2025</span></div>
+            <div class="work-body">
+              <p class="work-type">Local Shelf</p>
+              <h3>崇庆寺飞鸟</h3>
+              <p>本地素材柜里的一个片段。适合做成更有呼吸感的短片页面。</p>
+              <div class="work-links">
+                <a href="https://www.xiaohongshu.com/search_result?keyword=1874566400%20%E5%B4%87%E5%BA%86%E5%AF%BA%E9%A3%9E%E9%B8%9F" target="_blank" rel="noreferrer">Find</a>
+                <a href="#flow">To Sort</a>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section id="notes" class="section notes-section">
-        <div class="section-heading">
+      <section id="flow" class="section flow-section">
+        <div class="section-heading reveal">
           <div>
-            <p class="section-label">Studio Notes</p>
-            <h2>先不完美，也先放下。</h2>
+            <p class="section-label">Flow Map</p>
+            <h2>先让它流动，再慢慢变完整。</h2>
           </div>
         </div>
-        <div class="note-grid">
-          <article>
-            <span>Local Shelf</span>
-            <strong>成片预设 / 一些成片</strong>
-            <p>本地还有 TO BE FREE、崇庆寺飞鸟、新余英雄纪念碑、旗山简介、团子动漫社预览等素材，后面会慢慢整理。</p>
+        <div class="flow-grid">
+          <article class="flow-card reveal">
+            <span>01</span>
+            <h3>拍摄</h3>
+            <p>学校、树林、海边、路上，先让感受进入镜头。</p>
           </article>
-          <article>
-            <span>Public Channels</span>
-            <strong>Dreamerzhang / 1874566400</strong>
-            <p>已经发布的内容先接小红书和抖音，等拿到单条链接后再替换成一键直达。</p>
+          <article class="flow-card reveal">
+            <span>02</span>
+            <h3>整理</h3>
+            <p>把本地素材、已发布链接和还没命名的片段慢慢归档。</p>
           </article>
-          <article>
-            <span>Direction</span>
-            <strong>树林、风、路、学校</strong>
-            <p>我更喜欢自由洒脱的画面，不要太精致地端着，要像真的在往前走。</p>
+          <article class="flow-card reveal">
+            <span>03</span>
+            <h3>发布</h3>
+            <p>先放出能看的，再把每个作品做成更完整的页面。</p>
           </article>
         </div>
       </section>
 
-      <section id="about" class="section about-section">
+      <section id="about" class="section about-section reveal">
         <div>
           <p class="section-label">About</p>
           <h2>Niks Zhang</h2>
         </div>
         <p>
-          我叫章紫琼，也叫 Niks。二十岁，有很多梦想。这里是乌云向东的作品集，也是一个还在长大的影像房间。
+          我叫章紫琼，也叫 Niks。二十岁，有很多梦想。这里是乌云向东的作品集，也是一个还在长大的影像入口。
         </p>
       </section>
 
-      <section id="contact" class="section contact-section">
+      <section id="contact" class="section contact-section reveal">
         <div>
           <p class="section-label">Contact</p>
           <h2>Send a signal.</h2>
