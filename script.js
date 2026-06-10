@@ -1,109 +1,44 @@
 const root = document.documentElement;
+const body = document.body;
 root.classList.add("js-enabled");
 
-const tabs = document.querySelectorAll(".tab");
-const filterItems = document.querySelectorAll("[data-kind]");
 const year = document.querySelector("#year");
 const revealItems = document.querySelectorAll(".reveal");
-const rebirth = document.querySelector(".rebirth-section");
-const rebirthStage = document.querySelector(".rebirth-stage");
-const themeButtons = document.querySelectorAll("[data-theme-choice]");
-
-const setTheme = (theme) => {
-  document.body.dataset.theme = theme;
-
-  themeButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.themeChoice === theme);
-  });
-
-  try {
-    localStorage.setItem("niks-theme", theme);
-  } catch {
-    // Local storage can be unavailable in some private browsing contexts.
-  }
-};
+const descentSection = document.querySelector(".descent-section");
+const tiltCards = document.querySelectorAll(".tilt-card");
 
 if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-try {
-  const savedTheme = localStorage.getItem("niks-theme");
-  if (savedTheme) {
-    setTheme(savedTheme);
-  }
-} catch {
-  setTheme("maple");
-}
+const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max);
 
-const updateScroll = () => {
+const updateScrollState = () => {
   const maxScroll = document.body.scrollHeight - window.innerHeight;
-  const percent = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
-  root.style.setProperty("--scroll", `${percent}%`);
+  const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+  root.style.setProperty("--progress", `${progress * 100}%`);
+
+  if (descentSection) {
+    const rect = descentSection.getBoundingClientRect();
+    const travel = Math.max(rect.height - window.innerHeight, 1);
+    const descent = clamp(-rect.top / travel);
+    root.style.setProperty("--descent", descent.toFixed(3));
+    body.dataset.zone = descent > 0.62 || progress > 0.38 ? "ground" : "space";
+  }
 };
 
-window.addEventListener("scroll", updateScroll, { passive: true });
-updateScroll();
+window.addEventListener("scroll", updateScrollState, { passive: true });
+window.addEventListener("resize", updateScrollState);
+updateScrollState();
 
 window.addEventListener(
   "pointermove",
   (event) => {
     root.style.setProperty("--mouse-x", `${event.clientX}px`);
     root.style.setProperty("--mouse-y", `${event.clientY}px`);
-    root.style.setProperty("--tilt", `${(event.clientX / window.innerWidth - 0.5) * 20}`);
   },
   { passive: true }
 );
-
-if (rebirth && rebirthStage) {
-  rebirthStage.addEventListener(
-    "pointermove",
-    (event) => {
-      const rect = rebirthStage.getBoundingClientRect();
-      const x = ((event.clientX - rect.left) / rect.width) * 100;
-      const y = ((event.clientY - rect.top) / rect.height) * 100;
-
-      rebirth.classList.add("is-awake");
-      rebirthStage.style.setProperty("--stage-x", `${x}%`);
-      rebirthStage.style.setProperty("--stage-y", `${y}%`);
-    },
-    { passive: true }
-  );
-
-  rebirthStage.addEventListener("pointerleave", () => {
-    rebirth.classList.remove("is-awake");
-  });
-}
-
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const filter = tab.dataset.filter;
-
-    tabs.forEach((item) => {
-      item.classList.toggle("active", item === tab);
-    });
-
-    filterItems.forEach((item) => {
-      const shouldShow = filter === "all" || item.dataset.kind === filter;
-      item.classList.toggle("hidden", !shouldShow);
-    });
-  });
-});
-
-themeButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const theme = button.dataset.themeChoice;
-    setTheme(theme);
-
-    if (theme === "cosmos") {
-      document.querySelector("#cosmos")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-    if (theme === "rebirth") {
-      document.querySelector("#rebirth")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  });
-});
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -114,15 +49,30 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.16 }
+  { threshold: 0.14 }
 );
 
 revealItems.forEach((item, index) => {
-  item.style.transitionDelay = `${Math.min(index * 45, 260)}ms`;
-
+  item.style.transitionDelay = `${Math.min(index * 45, 240)}ms`;
   if (window.location.hash) {
     item.classList.add("visible");
   }
-
   observer.observe(item);
+});
+
+tiltCards.forEach((card) => {
+  card.addEventListener(
+    "pointermove",
+    (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `perspective(900px) rotateX(${(-y * 4).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg) translateY(-4px)`;
+    },
+    { passive: true }
+  );
+
+  card.addEventListener("pointerleave", () => {
+    card.style.transform = "";
+  });
 });
