@@ -5,142 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Nikseast / 乌云向东，一个从宇宙滑向森林的双语视频作品集。纪实影像、现场故事、品牌合作。"
+      content="Nikseast / 乌云向东，一个 NASA 风格的双语视频作品集，记录影像、现场故事、品牌合作与个人探索。"
     />
-    <title>Nikseast | 一个流动的作品集</title>
+    <title>Nikseast | NASA 风格影像任务档案</title>
     <link rel="preload" href="assets/nasa-cupola-earth.jpg" as="image" />
-    <link rel="preload" href="assets/hero-clouds.png" as="image" />
+    <link rel="preload" href="assets/to-be-free-poster.jpg" as="image" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-zone="space">
+  <body>
     <div class="progress" aria-hidden="true"></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
-    <div class="zone-indicator" aria-hidden="true">
-      <span>Orbit</span>
-      <span>Forest</span>
-    </div>
+    <div class="cursor-scan" aria-hidden="true"></div>
+    <div class="mission-grid" aria-hidden="true"></div>
 
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Nikseast home">
-        <span>Nikseast</span>
-        <small>乌云向东</small>
+        <span class="brand-mark">NKS</span>
+        <span>
+          <strong>Nikseast</strong>
+          <small>乌云向东 / Spaceborne Stories</small>
+        </span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#descent">降落 / Descent</a>
-        <a href="#works">作品 / Works</a>
-        <a href="#about">关于 / About</a>
-        <a href="#collab">合作 / Contact</a>
+        <a href="#mission">Mission</a>
+        <a href="#works">Works</a>
+        <a href="#about">Crew</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="space-hero" aria-label="Nikseast cosmic introduction">
-        <div class="space-bg" aria-hidden="true"></div>
+      <section class="hero" aria-label="Nikseast NASA inspired introduction">
         <div class="starfield" aria-hidden="true">
           <span></span><span></span><span></span><span></span><span></span>
           <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span>
         </div>
-        <div class="hero-orbit" aria-hidden="true"></div>
 
         <div class="hero-copy reveal">
-          <p class="eyebrow">乌云向东 / Clouds Eastward</p>
+          <p class="eyebrow">Mission Archive / 影像任务档案</p>
           <h1>Nikseast</h1>
-          <p class="portfolio-title">一个流动的作品集</p>
-          <p class="portfolio-subtitle">A Moving Portfolio</p>
-          <div class="slogan">
-            <span>让生命流动起来</span>
-            <span>Let Life Flow Again</span>
-          </div>
-          <p>
-            我一直相信，世界不是静止的。人在黑暗里看见地球，也在阳光下走进树林。
-            影像对我来说，是让故事重新开始流动的方法。
+          <p class="hero-title">把真实现场送入轨道。</p>
+          <p class="hero-text">
+            这里是乌云向东的深空作品集：用纪录感影像、现场节奏和人物能量，把校园、旅行、
+            品牌与个人探索做成一份持续更新的任务日志。
           </p>
-          <p class="en">
-            A documentary-style video portfolio moving from orbit to forest,
-            from distant dreams to real people, places, and stories.
+          <p class="hero-text en">
+            A NASA-inspired video portfolio for field stories, personal films, youth culture,
+            and brand missions in motion.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#descent">开始降落 / Begin Descent</a>
-            <a class="button ghost" href="#works">观看作品 / View Works</a>
+            <a class="button primary" href="#works">查看任务</a>
+            <a class="button secondary" href="#contact">建立联系</a>
           </div>
         </div>
 
-        <aside class="flight-panel reveal" aria-label="Portfolio summary">
-          <p class="panel-label">Current Signal</p>
+        <aside class="telemetry reveal" aria-label="Mission telemetry">
+          <p class="panel-kicker">Live Telemetry</p>
           <dl>
-            <div><dt>Mode</dt><dd>Dark orbit to daylight forest</dd></div>
-            <div><dt>Role</dt><dd>策划 / 拍摄 / 剪辑</dd></div>
-            <div><dt>Focus</dt><dd>纪实影像与品牌故事</dd></div>
+            <div>
+              <dt>Callsign</dt>
+              <dd>Nikseast / 乌云向东</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>策划 / 拍摄 / 剪辑</dd>
+            </div>
+            <div>
+              <dt>Signal</dt>
+              <dd>纪录感短片、品牌故事、现场影像</dd>
+            </div>
+            <div>
+              <dt>Motto</dt>
+              <dd>Let Life Flow Again</dd>
+            </div>
           </dl>
         </aside>
       </section>
 
-      <section id="descent" class="descent-section" aria-label="Scroll from space to forest">
-        <div class="descent-stage">
-          <div class="descent-layer space-layer" aria-hidden="true"></div>
-          <div class="descent-layer forest-layer" aria-hidden="true"></div>
-          <div class="descent-overlay" aria-hidden="true"></div>
-          <div class="trajectory" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class="descent-copy">
-            <p class="eyebrow">Descent / 从轨道到地面</p>
-            <h2>从宇宙的暗处，滑向树林里的光。</h2>
-            <p>
-              暗处是梦想、未知和距离；明处是现场、人的呼吸、可以被拍下来的真实生活。
-              这个网站会在两种状态之间流动。
-            </p>
+      <section id="mission" class="mission-section">
+        <div class="mission-visual reveal" aria-hidden="true">
+          <img src="assets/nasa-cupola-earth.jpg" alt="" />
+          <div class="scanline"></div>
+        </div>
+        <div class="mission-copy reveal">
+          <p class="eyebrow">Flight Plan / 任务路径</p>
+          <h2>从远处观察，回到真实的人。</h2>
+          <p>
+            我喜欢 NASA 影像里那种冷静、精密、辽阔的感觉：先把世界拉远，再重新看见每个具体的人、
+            每一次行动、每个现场里的光。这个网站现在也按这样的逻辑展开。
+          </p>
+          <div class="mission-steps" aria-label="Creative process">
+            <article>
+              <span>01</span>
+              <h3>Observe</h3>
+              <p>进入现场，记录人物状态、环境纹理和真实动机。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Plot</h3>
+              <p>把素材整理成轨迹，找到故事向前推进的角度。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Transmit</h3>
+              <p>用剪辑、节奏和声音，把感受变成可分享的信号。</p>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="ticker" aria-label="Portfolio keywords">
         <div class="ticker-track">
-          <span>Documentary Video</span>
-          <span>Field Notes</span>
-          <span>Brand Stories</span>
-          <span>Motion & Travel</span>
-          <span>Let Life Flow Again</span>
-          <span>纪实影像</span>
-          <span>现场感</span>
-          <span>品牌故事</span>
-          <span>运动与旅行</span>
-          <span>让生命流动起来</span>
+          <span>MISSION CONTROL</span>
+          <span>DOCUMENTARY VIDEO</span>
+          <span>FIELD SIGNALS</span>
+          <span>BRAND ORBITS</span>
+          <span>YOUTH CULTURE</span>
+          <span>LET LIFE FLOW AGAIN</span>
+          <span>MISSION CONTROL</span>
+          <span>DOCUMENTARY VIDEO</span>
+          <span>FIELD SIGNALS</span>
+          <span>BRAND ORBITS</span>
+          <span>YOUTH CULTURE</span>
+          <span>LET LIFE FLOW AGAIN</span>
         </div>
       </section>
 
       <section id="works" class="section works-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">Selected Works / 精选作品</p>
-          <h2>Works in Flow<br />流动中的作品</h2>
+          <p class="eyebrow">Selected Missions / 精选任务</p>
+          <h2>作品像一组从地面发射的信号。</h2>
           <p>
-            这些作品来自旅行、校园、品牌现场与未发布影像。每一个项目都由我完成全流程创作：
-            策划、拍摄、剪辑。
+            这些项目来自旅行、校园、品牌现场与未发布影像。每个任务都由我完成全流程创作：
+            选题、策划、拍摄、剪辑和发布表达。
           </p>
         </div>
 
-        <div class="work-feature reveal tilt-card">
-          <div class="video-frame">
-            <img src="assets/to-be-free-poster.jpg" alt="TO BE FREE 未发布短片封面" />
+        <article class="featured-work reveal tilt-card">
+          <div class="featured-media">
+            <img src="assets/to-be-free-poster.jpg" alt="TO BE FREE 短片封面" />
           </div>
-          <div class="feature-copy">
-            <p class="eyebrow">Selected Film / 未发布预览</p>
+          <div class="featured-copy">
+            <p class="eyebrow">Mission 00 / Personal Film</p>
             <h3>TO BE FREE</h3>
             <p>
-              自由不是一句话，是风、路、镜头，也是把自己重新放回广阔里的过程。
-              这一支先作为站内预览，之后可以替换成正式发布链接。
-            </p>
-            <p class="en">
-              A short preview about wind, distance, movement, and the feeling of becoming wide again.
+              一支关于风、路、身体和重新变宽的短片。自由不是一句话，而是一段把自己从狭窄里释放出来的轨迹。
             </p>
             <dl class="mini-meta">
               <div><dt>Role</dt><dd>策划 / 拍摄 / 剪辑</dd></div>
-              <div><dt>Type</dt><dd>Personal Film / Life Experiment</dd></div>
+              <div><dt>Status</dt><dd>Preview ready</dd></div>
             </dl>
           </div>
-        </div>
+        </article>
 
         <div class="work-grid">
           <article class="work-card reveal tilt-card">
@@ -148,13 +164,12 @@
               <span>01</span>
             </a>
             <div class="work-body">
-              <p class="eyebrow">Field Notes / 旅行纪实</p>
+              <p class="eyebrow">Field Mission / 旅行纪录</p>
               <h3>关于我变黑的那个夏天</h3>
               <p>
-                去万宁之前只是抱着放松的心情，最后却留下了阳光、皮肤、海和身体重新打开的记忆。
+                去万宁之前只是抱着放松的心情，最后留下了阳光、皮肤、海和身体重新打开的记忆。
               </p>
-              <p class="en">A summer field note about Wanning, sunlight, the ocean, and a body moving again.</p>
-              <a class="text-link" href="https://v.douyin.com/9tJZQgCMPnU/" target="_blank" rel="noreferrer">打开抖音 / Watch</a>
+              <a class="text-link" href="https://v.douyin.com/9tJZQgCMPnU/" target="_blank" rel="noreferrer">Watch Signal</a>
             </div>
           </article>
 
@@ -163,13 +178,12 @@
               <span>02</span>
             </a>
             <div class="work-body">
-              <p class="eyebrow">People in Motion / 校园现场</p>
-              <h3>射艺协会体验之校园还能这么玩？？</h3>
+              <p class="eyebrow">Campus Mission / 校园现场</p>
+              <h3>射艺协会体验：校园还能这么玩？</h3>
               <p>
-                把一次校园社团体验拍成可观看、可分享的现场故事，让普通活动有了入口和节奏。
+                把一次校园社团体验拍成可观看、可分享的现场故事，让普通活动有入口和节奏。
               </p>
-              <p class="en">A campus activity story shaped through curiosity, rhythm, and documentary observation.</p>
-              <a class="text-link" href="https://v.douyin.com/1zvDnRk_OO8/" target="_blank" rel="noreferrer">打开抖音 / Watch</a>
+              <a class="text-link" href="https://v.douyin.com/1zvDnRk_OO8/" target="_blank" rel="noreferrer">Watch Signal</a>
             </div>
           </article>
 
@@ -178,13 +192,12 @@
               <span>03</span>
             </a>
             <div class="work-body">
-              <p class="eyebrow">Brand Stories / 品牌故事</p>
+              <p class="eyebrow">Brand Mission / 品牌故事</p>
               <h3>湿地板品牌 Callback 视频</h3>
               <p>
-                为有真实场景和生活气息的品牌完成 callback 内容，从现场捕捉情绪，再剪成有记忆点的视频。
+                为有真实场景和生活气息的品牌完成 callback 内容，从现场情绪里剪出记忆点。
               </p>
-              <p class="en">A callback video for a place-based brand, built from field shooting and emotional editing.</p>
-              <a class="text-link" href="https://weixin.qq.com/sph/A4ipe9WseO" target="_blank" rel="noreferrer">打开视频号 / Watch</a>
+              <a class="text-link" href="https://weixin.qq.com/sph/A4ipe9WseO" target="_blank" rel="noreferrer">Watch Signal</a>
             </div>
           </article>
         </div>
@@ -192,50 +205,46 @@
 
       <section id="about" class="section about-section">
         <div class="about-copy reveal">
-          <p class="eyebrow">About Niks / 关于我</p>
-          <h2>我在真实的现场里寻找故事。</h2>
+          <p class="eyebrow">Crew Profile / 创作者档案</p>
+          <h2>我在真实现场里寻找故事的推进力。</h2>
           <p>
             我是 Niks，网络账号叫乌云向东。喜欢文学、音乐、运动、旅行，也喜欢和人交流。
-            我做视频时很在意现场的气味、人的状态、行动的节奏，以及一个故事为什么会让人共情。
+            做视频时，我会观察现场气味、人物状态、行动节奏，以及一个故事为什么会让人共情。
           </p>
           <p>
-            我的创作方法很直接：走进现场，发现问题，理顺情绪，推动它继续发生。
+            我的创作方法很直接：进入现场，发现问题，理顺情绪，推动它继续发生。
             这也是“让生命流动起来”对我的意义。
           </p>
-          <p class="en">
-            I work with documentary-style video, real locations, and people in motion.
-            My strength is finding the stuck point, shaping the story, and helping it move.
-          </p>
         </div>
-        <div class="photo-collage reveal">
-          <img class="photo-large" src="assets/maple-orb.jpg" alt="乌云向东站在透明气泡后面" />
-          <img class="photo-small top" src="assets/maple-portrait.jpg" alt="乌云向东在枫叶树下" />
-          <img class="photo-small bottom" src="assets/maple-tree.jpg" alt="乌云向东在树林里拿着松果装饰" />
+        <div class="crew-gallery reveal">
+          <img class="crew-large" src="assets/maple-orb.jpg" alt="乌云向东站在透明装置后面" />
+          <img class="crew-small top" src="assets/maple-portrait.jpg" alt="乌云向东在枫叶树下" />
+          <img class="crew-small bottom" src="assets/maple-tree.jpg" alt="乌云向东在树林里拿着装饰" />
         </div>
       </section>
 
-      <section class="section story-section">
+      <section class="section data-section">
         <div class="section-heading reveal">
-          <p class="eyebrow">Living Archive / 生命力档案</p>
-          <h2>不是标签，是我走过的现场。</h2>
+          <p class="eyebrow">Mission Data / 生命力档案</p>
+          <h2>这些不是标签，是我走过的现场。</h2>
         </div>
-        <div class="story-grid">
-          <article class="story-card reveal tilt-card">
-            <span>50万+</span>
+        <div class="data-grid">
+          <article class="data-card reveal tilt-card">
+            <span>50+</span>
             <h3>短视频播放累计</h3>
             <p>在账号运营和内容发布里，学习如何让真实内容被看见。</p>
           </article>
-          <article class="story-card reveal tilt-card">
+          <article class="data-card reveal tilt-card">
             <span>1周</span>
-            <h3>从 0 学电路做无人机</h3>
+            <h3>从零学电路做无人机</h3>
             <p>把“不知道怎么做”拆成可以推进的步骤，再让想法真的飞起来。</p>
           </article>
-          <article class="story-card reveal tilt-card">
+          <article class="data-card reveal tilt-card">
             <span>20人</span>
             <h3>带队比赛获得亚军</h3>
             <p>在运动现场里组织、沟通、解决临场问题，也捕捉人的能量。</p>
           </article>
-          <article class="story-card reveal tilt-card">
+          <article class="data-card reveal tilt-card">
             <span>2000元</span>
             <h3>旧书回收公益项目</h3>
             <p>把校园里的闲置资源重新连接起来，让一件小事继续流动。</p>
@@ -243,23 +252,19 @@
         </div>
       </section>
 
-      <section id="collab" class="section collab-section">
-        <div class="collab-media reveal">
+      <section id="contact" class="section contact-section">
+        <div class="contact-media reveal">
           <img src="assets/cover-freedom.png" alt="海边公路与夕阳" />
         </div>
-        <div class="collab-copy reveal">
-          <p class="eyebrow">Collaboration / 合作方向</p>
-          <h2>适合有故事感的品牌。</h2>
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Docking Request / 合作方向</p>
+          <h2>适合有真实场景、有故事感的项目。</h2>
           <p>
-            我希望合作的品牌有真实场景、地方气息、年轻人状态、运动感或生活方式表达。
+            我希望合作的品牌有地方气息、年轻人状态、运动感、旅行感或生活方式表达。
             我可以承担前期策划、现场拍摄、剪辑、短视频内容与纪录感品牌短片。
           </p>
-          <p class="en">
-            I am open to story-led brand projects in travel, outdoor culture, youth lifestyle,
-            campus communities, local businesses, and public-interest stories.
-          </p>
           <ul class="service-list">
-            <li>纪实短片 / Documentary-style video</li>
+            <li>纪录感短片 / Documentary-style video</li>
             <li>品牌故事 / Brand storytelling</li>
             <li>活动与现场记录 / Event & field shooting</li>
             <li>短视频策划剪辑 / Short-form content editing</li>

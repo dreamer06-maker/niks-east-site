@@ -1,30 +1,18 @@
 const root = document.documentElement;
-const body = document.body;
 root.classList.add("js-enabled");
 
 const year = document.querySelector("#year");
 const revealItems = document.querySelectorAll(".reveal");
-const descentSection = document.querySelector(".descent-section");
 const tiltCards = document.querySelectorAll(".tilt-card");
 
 if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max);
-
 const updateScrollState = () => {
   const maxScroll = document.body.scrollHeight - window.innerHeight;
   const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
   root.style.setProperty("--progress", `${progress * 100}%`);
-
-  if (descentSection) {
-    const rect = descentSection.getBoundingClientRect();
-    const travel = Math.max(rect.height - window.innerHeight, 1);
-    const descent = clamp(-rect.top / travel);
-    root.style.setProperty("--descent", descent.toFixed(3));
-    body.dataset.zone = descent > 0.62 || progress > 0.38 ? "ground" : "space";
-  }
 };
 
 window.addEventListener("scroll", updateScrollState, { passive: true });
