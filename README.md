@@ -1,23 +1,11 @@
-# Nikseast
+# NIKS / 章紫琼 摄影与影像作品集
 
-A bilingual moving video portfolio for Nikseast / 乌云向东.
-
-## Files
-
-- `index.html`: page content
-- `styles.css`: visual design
-- `script.js`: lightweight interactions
-- `assets/`: images and compressed video previews
-
-## Visual Sources
-
-- `assets/nasa-cupola-earth.jpg`: NASA image asset used for the realistic orbit background.
+面向影视行业求职的静态单页作品集。首页包含 Showreel、三个精选项目、About、简历下载和联系方式。
 
 ## Local preview
 
-Open `index.html` in a browser.
+在项目目录启动静态服务器后访问首页。视频使用 H.264 MP4、`preload="metadata"` 和独立 WebP 封面。
 
 ## Deployment
 
-This static site can be deployed through GitHub-connected Cloudflare Pages.
-Wait for content approval before pushing to GitHub.
+保留原 Cloudflare Pages / Wrangler 静态资源部署方式。内容确认前不要提交、推送或部署。
