@@ -145,6 +145,6 @@ content:
         type: object
         fields:
           - { name: name, label: 姓名, type: string }
-          - { name: email, label: 邮箱, type: string }
+          - { name: email_address, label: 联系邮箱, type: string }
           - { name: wechat, label: 微信号, type: string }
           - { name: social_account, label: 个人自媒体账号, type: string }
