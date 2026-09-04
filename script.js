@@ -1,3 +1,24 @@
+const setText=(selector,value)=>{const element=document.querySelector(selector);if(element&&value!==undefined)element.textContent=value};
+const setAttr=(selector,name,value)=>{const element=document.querySelector(selector);if(element&&value)element.setAttribute(name,value)};
+const setVideo=(selector,source,poster)=>{const video=document.querySelector(selector);if(!video)return;if(poster)video.poster=poster;const sourceElement=video.querySelector('source');if(sourceElement&&source)sourceElement.src=source;if(source)video.load()};
+
+async function loadEditableContent(){
+  try{
+    const response=await fetch('content/site.json',{cache:'no-cache'});
+    if(!response.ok)return;
+    const data=await response.json();
+    if(data.seo){document.title=data.seo.title||document.title;setAttr('meta[name="description"]','content',data.seo.description)}
+    if(data.hero){setText('.hero-role',data.hero.role);setText('.hero-intro',data.hero.intro);setText('.availability',data.hero.availability);setAttr('.hero-image img','src',data.hero.image);setAttr('.hero-image img','alt',data.hero.image_alt)}
+    if(data.showreel){setText('.showreel-note p:first-child',data.showreel.description);setText('.showreel-note p:last-child',data.showreel.credits);setVideo('.showreel-player video',data.showreel.video,data.showreel.poster)}
+    (data.projects||[]).slice(0,3).forEach((item,index)=>{const card=document.querySelectorAll('.project')[index];if(!card)return;const text=(selector,value)=>{const el=card.querySelector(selector);if(el&&value!==undefined)el.textContent=value};text('.project-index',item.index);text('h3',item.title);text('.project-en',item.subtitle);text('dd:nth-of-type(1)',item.type);const dds=card.querySelectorAll('dd');if(dds[1])dds[1].textContent=item.role;text('.project-info > p:not([class])',item.description);text('.credit-note',item.credits);setAttrIn(card,'img','src',item.poster);setAttrIn(card,'img','alt',item.image_alt);const video=card.querySelector('video');if(video){video.poster=item.poster||video.poster;const source=video.querySelector('source');if(source&&item.video)source.src=item.video;video.load()}});
+    if(data.studies){setText('.studies-intro p',data.studies.introduction);(data.studies.items||[]).slice(0,3).forEach((item,index)=>{const card=document.querySelectorAll('.study')[index];if(!card)return;const set=(selector,value)=>{const el=card.querySelector(selector);if(el&&value!==undefined)el.textContent=value};set('.study-index',item.index);set('h3',item.title);set('.study-subtitle',item.subtitle);const dds=card.querySelectorAll('dd');[item.role,item.device,item.tool].forEach((value,i)=>{if(dds[i])dds[i].textContent=value});const video=card.querySelector('video');if(video){video.poster=item.poster||video.poster;const source=video.querySelector('source');if(source&&item.video)source.src=item.video;video.load()}})}
+    if(data.about){const paragraphs=document.querySelectorAll('.about-copy p');[data.about.lead,data.about.paragraph_1,data.about.paragraph_2].forEach((value,index)=>{if(paragraphs[index]&&value!==undefined)paragraphs[index].textContent=value});setAttr('.about-portrait img','src',data.about.portrait);setText('.about-video-heading p:last-child',data.about.video_description);setVideo('.about-video video',data.about.video,data.about.video_poster)}
+    if(data.contact){setText('.contact-grid > div:nth-child(1) strong',data.contact.name);const email=document.querySelector('.contact-grid > div:nth-child(2) a');if(email&&data.contact.email){email.textContent=data.contact.email;email.href=`mailto:${data.contact.email}`};const wechat=document.querySelector('.contact-grid > div:nth-child(3) button');if(wechat&&data.contact.wechat){wechat.dataset.copy=data.contact.wechat;wechat.firstChild.textContent=`${data.contact.wechat} `};const social=document.querySelector('.contact-grid > div:nth-child(4) button');if(social&&data.contact.social_account){social.dataset.copy=data.contact.social_account;social.firstChild.textContent=`${data.contact.social_account} `}}
+  }catch(error){console.warn('Editable content could not be loaded.',error)}
+}
+function setAttrIn(root,selector,name,value){const element=root.querySelector(selector);if(element&&value)element.setAttribute(name,value)}
+loadEditableContent();
+
 const menuButton=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.site-nav');
 menuButton?.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open)});

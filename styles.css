@@ -85,3 +85,4 @@ body{overflow-x:hidden}
 @keyframes spark-out{0%{opacity:1;box-shadow:0 0 0 0 rgba(134,184,212,.7)}100%{opacity:0;width:4rem;height:4rem;box-shadow:0 0 0 1rem rgba(134,184,212,0)}}
 @media(max-width:900px){.orbit-interface{left:42%;top:10%;max-width:none;max-height:none;width:20rem;height:20rem;opacity:.46}.contact-grid{grid-template-columns:1fr}.cosmic-progress{right:.45rem}.cosmic-cursor{display:none}}
 @media(prefers-reduced-motion:reduce){.orbit{animation:none}.interactive-card{transform:none!important}.cosmic-cursor,.cosmic-spark{display:none}}
+.availability{white-space:pre-line}

@@ -1,0 +1,150 @@
+media:
+  - name: images
+    label: 图片库
+    input: assets/uploads/images
+    output: /assets/uploads/images
+    categories: [image]
+    rename: safe
+  - name: videos
+    label: 视频库
+    input: assets/uploads/videos
+    output: /assets/uploads/videos
+    categories: [video]
+    rename: safe
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "通过可视化后台添加 {filename}"
+      update: "通过可视化后台更新 {filename}"
+      delete: "通过可视化后台删除 {filename}"
+      rename: "通过可视化后台重命名 {oldFilename}"
+
+content:
+  - name: site
+    label: 网站内容
+    type: file
+    path: content/site.json
+    format: json
+    operations:
+      delete: false
+      rename: false
+    fields:
+      - name: seo
+        label: 网站名称与搜索摘要
+        type: object
+        fields:
+          - { name: title, label: 浏览器标题, type: string, required: true }
+          - { name: description, label: 网站简介, type: text, required: true }
+      - name: hero
+        label: 首页首屏
+        type: object
+        fields:
+          - { name: role, label: 求职方向, type: string }
+          - { name: intro, label: 一句话介绍, type: text }
+          - { name: availability, label: 学校与到岗信息, type: text, description: 可换行 }
+          - name: image
+            label: 首页主图
+            type: image
+            options: { media: images }
+          - { name: image_alt, label: 图片说明, type: string }
+      - name: showreel
+        label: Showreel
+        type: object
+        fields:
+          - { name: description, label: 视频介绍, type: text }
+          - { name: credits, label: 本人职责说明, type: text }
+          - name: video
+            label: Showreel 视频
+            type: file
+            options: { media: videos, categories: [video], extensions: [mp4], rename: safe }
+          - name: poster
+            label: 视频封面
+            type: image
+            options: { media: images }
+      - name: projects
+        label: 三个重点项目
+        type: object
+        list:
+          min: 3
+          max: 3
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - { name: index, label: 编号和年份, type: string }
+          - { name: title, label: 中文标题, type: string, required: true }
+          - { name: subtitle, label: 英文副标题, type: string }
+          - { name: type, label: 项目类型, type: string }
+          - { name: role, label: 本人职责, type: text }
+          - { name: description, label: 项目介绍, type: text }
+          - { name: credits, label: 详细职责与版权说明, type: text }
+          - name: poster
+            label: 封面图片
+            type: image
+            options: { media: images }
+          - { name: image_alt, label: 图片说明, type: string }
+          - name: video
+            label: 项目视频
+            type: file
+            options: { media: videos, categories: [video], extensions: [mp4], rename: safe }
+      - name: studies
+        label: 影像习作
+        type: object
+        fields:
+          - { name: introduction, label: 栏目介绍, type: text }
+          - name: items
+            label: 三条习作
+            type: object
+            list:
+              min: 3
+              max: 3
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - { name: index, label: 编号, type: string }
+              - { name: title, label: 标题, type: string, required: true }
+              - { name: subtitle, label: 副标题, type: string }
+              - { name: role, label: 本人职责, type: string }
+              - { name: device, label: 拍摄设备, type: string }
+              - { name: tool, label: 调色工具, type: string }
+              - name: video
+                label: 视频
+                type: file
+                options: { media: videos, categories: [video], extensions: [mp4], rename: safe }
+              - name: poster
+                label: 视频封面
+                type: image
+                options: { media: images }
+      - name: about
+        label: 自我介绍
+        type: object
+        fields:
+          - { name: lead, label: 第一段, type: text }
+          - { name: paragraph_1, label: 第二段, type: text }
+          - { name: paragraph_2, label: 第三段, type: text }
+          - name: portrait
+            label: 个人照片
+            type: image
+            options: { media: images }
+          - { name: video_description, label: 自我介绍视频说明, type: text }
+          - name: video
+            label: 自我介绍视频
+            type: file
+            options: { media: videos, categories: [video], extensions: [mp4], rename: safe }
+          - name: video_poster
+            label: 自我介绍视频封面
+            type: image
+            options: { media: images }
+      - name: contact
+        label: 联系方式
+        type: object
+        fields:
+          - { name: name, label: 姓名, type: string }
+          - { name: email, label: 邮箱, type: string }
+          - { name: wechat, label: 微信号, type: string }
+          - { name: social_account, label: 个人自媒体账号, type: string }
