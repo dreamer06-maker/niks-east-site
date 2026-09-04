@@ -21,6 +21,8 @@
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="cosmic-progress" aria-hidden="true"><span>ORBIT</span><i></i></div>
+  <div class="cosmic-cursor" aria-hidden="true"><span></span></div>
   <header class="site-header" data-header>
     <a class="wordmark" href="#top" aria-label="返回首页">NIKS<span>.</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
@@ -36,6 +38,12 @@
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="orbit-interface" aria-hidden="true">
+        <span class="orbit orbit-one"></span>
+        <span class="orbit orbit-two"></span>
+        <span class="orbit-core">N</span>
+        <span class="orbit-label">NIKS / VISUAL ORBIT</span>
+      </div>
       <div class="hero-copy" data-reveal>
         <p class="eyebrow">VISUAL STORYTELLING / CAMERA · EDIT</p>
         <h1 id="hero-title"><span class="hero-name-en">NIKS</span><span class="hero-name-cn">章紫琼</span><em>/ ZIQIONG ZHANG</em></h1>
@@ -231,6 +239,16 @@
           <img src="assets/ziqiong-portrait.jpg" alt="章紫琼肖像" loading="lazy" width="760" height="900">
           <figcaption>ZIQIONG ZHANG / NIKS</figcaption>
         </figure>
+        <div class="about-video" data-reveal>
+          <div class="about-video-heading">
+            <p class="section-no">SELF INTRODUCTION / 自我介绍</p>
+            <p>通过一段短片认识我，以及我如何看待影像、现场与创作。</p>
+          </div>
+          <video controls playsinline preload="metadata" poster="assets/self-introduction-poster.webp" aria-label="章紫琼自我介绍视频">
+            <source src="assets/self-introduction.mp4" type="video/mp4">
+            您的浏览器无法播放视频。可<a href="assets/self-introduction.mp4">直接打开视频</a>。
+          </video>
+        </div>
         <div class="capabilities" data-reveal>
           <div><h3>IMAGE</h3><p>人物与旅行纪实<br>校园与社团影像<br>运动与现场拍摄<br>航模及穿越机影像</p></div>
           <div><h3>TOOLS</h3><p>Nikon ZR<br>DJI RS 3<br>星环35穿越机<br>DaVinci Resolve / 剪映</p></div>
@@ -257,11 +275,12 @@
       <div class="contact-grid" data-reveal>
         <div><span>NAME</span><strong>章紫琼 / NIKS</strong></div>
         <div><span>EMAIL</span><a href="mailto:2889597620@qq.com">2889597620@qq.com</a></div>
-        <div><span>WECHAT</span><button type="button" class="copy-button" data-copy="nikseast">nikseast <small>COPY</small></button></div>
+        <div><span>WECHAT</span><button type="button" class="copy-button" data-copy="nikseast" data-copy-label="微信号">nikseast <small>COPY</small></button></div>
+        <div><span>个人自媒体账号</span><button type="button" class="copy-button" data-copy="82994752208" data-copy-label="自媒体账号">82994752208 <small>COPY</small></button></div>
       </div>
       <footer><span>© 2026 NIKS / ZIQIONG ZHANG</span><a href="#top">BACK TO TOP ↑</a></footer>
     </section>
   </main>
-  <div class="toast" role="status" aria-live="polite" data-toast>微信号已复制</div>
+  <div class="toast" role="status" aria-live="polite" data-toast>已复制</div>
 </body>
 </html>
