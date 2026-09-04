@@ -1,0 +1,47 @@
+{
+  "seo": {
+    "title": "NIKS / 章紫琼｜摄影与影像作品集",
+    "description": "章紫琼 NIKS 的摄影与影像作品集，包含旅行纪实、校园社团、运动、生活方式和航模影像。"
+  },
+  "hero": {
+    "role": "实习摄影申请",
+    "intro": "我进入真实场景，记录人物、动作与正在发生的生活。",
+    "availability": "福州大学｜2027届\n可随时到岗｜杭州｜每周5天｜可连续实习约6个月",
+    "image": "/assets/showreel-poster.webp",
+    "image_alt": "航模活动场地的俯拍画面"
+  },
+  "showreel": {
+    "description": "本片涵盖旅行纪实、校园社团、运动、生活方式及航模影像。",
+    "credits": "本人在不同项目中承担独立摄影、联合摄影、前期策划、现场执行及后期剪辑等职责；部分画面来自团队联合创作，具体职责见项目说明。",
+    "video": "/assets/showreel-2026.mp4",
+    "poster": "/assets/showreel-poster.webp"
+  },
+  "projects": [
+    {"index":"01 / 2026","title":"反穿武功山","subtitle":"WINTER CROSSING, WUGONG MOUNTAIN","type":"旅行纪实影像","role":"联合摄影｜独立剪辑","description":"记录一次冬季反穿武功山的旅程。在雪林、浓雾、低温和复杂山地环境中，围绕人物行进、环境变化与旅途状态完成影像记录。","credits":"约95%素材由本人拍摄；本人出现在画面中的部分镜头由同行成员拍摄。五人同行，本人负责全片剪辑。","poster":"/assets/project-wugongshan.webp","image_alt":"反穿武功山项目中的雪林行进画面","video":"/assets/wugongshan-excerpt.mp4"},
+    {"index":"02 / 2026","title":"我们的航协","subtitle":"INSIDE THE AVIATION CLUB","type":"校园社团影像｜团队联合创作","role":"前期策划｜部分摄影｜现场执行｜后期剪辑","description":"围绕航模协会成员、飞行器准备、飞行活动和社团生活完成的团队影像项目。","credits":"约70%素材由社团成员联合拍摄。本人负责前期策划、约30%现场摄影、素材组织和后期剪辑；部分航拍及穿越机画面由团队成员完成。本人曾用一周独立组装一套穿越机。","poster":"/assets/project-aviation.webp","image_alt":"航模协会项目中的成员与飞行活动","video":"/assets/aviation-club-excerpt.mp4"},
+    {"index":"03 / 2026","title":"胡辣汤","subtitle":"A MORNING IN THE KITCHEN","type":"生活方式｜餐饮纪实","role":"独立摄影｜剪辑","description":"在真实营业环境中记录工作人员状态，以及揉面、切面、制作和出餐过程，完成一支生活化餐饮影像。","credits":"重点观察手部动作、劳动节奏与真实后厨空间，以近景细节建立食物制作的触感。","poster":"/assets/project-hulatang.webp","image_alt":"胡辣汤餐饮纪实中的手工制作细节","video":"/assets/hulatang-excerpt.mp4"}
+  ],
+  "studies": {
+    "introduction": "在日常场景中进行的单镜头影像练习，关注人物细节、空间构图、移动和色彩。全部由章紫琼使用 iPhone 17 Pro 独立拍摄并调色，调色工具为飓风相机。",
+    "items": [
+      {"index":"01 / SINGLE SHOT","title":"奶奶的手","subtitle":"人物动作与色彩习作","role":"独立摄影 · 调色","device":"iPhone 17 Pro","tool":"飓风相机","video":"/assets/study-grandma-hands.mp4","poster":"/assets/study-grandma-hands-poster.webp"},
+      {"index":"02 / SINGLE SHOT","title":"车窗","subtitle":"空间、移动与框中框习作","role":"独立摄影 · 调色","device":"iPhone 17 Pro","tool":"飓风相机","video":"/assets/study-car-window.mp4","poster":"/assets/study-car-window-poster.webp"},
+      {"index":"03 / SINGLE SHOT","title":"写的字","subtitle":"低照度与室内氛围习作","role":"独立摄影 · 调色","device":"iPhone 17 Pro","tool":"飓风相机","video":"/assets/study-writing.mp4","poster":"/assets/study-writing-poster.webp"}
+    ]
+  },
+  "about": {
+    "lead": "我是章紫琼，创作者名字是 NIKS，福州大学法学专业2027届本科生。",
+    "paragraph_1": "我持续参与旅行纪实、校园社团、运动和生活方式内容的拍摄与剪辑，也曾在海南万宁从事摄影剪辑相关工作。我习惯进入陌生环境，与人物建立联系，并在人员、时间和现场条件有限的情况下完成拍摄、素材整理和后期交付。",
+    "paragraph_2": "过去几年我把较多精力投入剪辑和内容完成，现在正在重新加强摄影本身，希望进入更专业的制作现场，学习机位、灯光、器材管理、素材流程和团队协作。",
+    "portrait": "/assets/ziqiong-portrait.jpg",
+    "video_description": "通过一段短片认识我，以及我如何看待影像、现场与创作。",
+    "video": "/assets/self-introduction.mp4",
+    "video_poster": "/assets/self-introduction-poster.webp"
+  },
+  "contact": {
+    "name": "章紫琼 / NIKS",
+    "email": "2889597620@qq.com",
+    "wechat": "nikseast",
+    "social_account": "82994752208"
+  }
+}
